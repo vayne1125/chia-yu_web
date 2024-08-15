@@ -1,0 +1,462 @@
+/*  ====================
+         topbar 相關  
+    ====================  */
+#menu {
+    position: absolute; /* 絕對定位 */
+    top: 0; /* 距離頁面頂部 0 像素 */
+    right: 3%; /* 距離頁面右側 0 像素 */
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: flex-end; /* 將項目對齊到容器的右側 */
+    background-color: #ffffff00; /* 背景顏色透明 */
+    z-index: 1000; /* 確保菜單在其他內容上方 */
+    list-style: none; /* 去掉默認的列表樣式 */
+    margin: 0; /* 去掉外邊距 */
+    padding: 0; /* 去掉內邊距 */
+}
+#menu li {
+    text-align: center;
+    padding: 20px 3px;
+    font-weight: bold;
+}
+#menu li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size:1rem;
+}
+
+li.active a {
+    color: white !important;
+}
+
+#logo {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 1%;
+}
+
+#top-bar {
+    position: absolute;
+    top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    z-index: 1000;
+
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+/*  ====================
+         背景相關  
+        1. video
+        2. pic
+        3. color filter
+    ====================  */
+
+#myVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: 1;
+    overflow: hidden; /* 隱藏溢出的內容 */
+}
+
+#video-bg_color::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background: linear-gradient(to bottom, #db6b9c 0%,#f4ecc2 100%);
+    z-index: 2; /* 確保顏色層在影片上面 */
+}
+
+#video-bg_color.high-opacity::before {
+    opacity: 0.5; /* 影片播放用低透明 */
+}
+
+#backgroundImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+#img-bg_color::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.90;
+    background: linear-gradient(to bottom, #db6b9c 0%,#f4ecc2 100%);
+    z-index: 2;
+}
+
+.vertical-scrolling{
+    text-align:center;
+    font-size: 3rem;
+}
+
+body {
+    font: 16px/1.6 'Raleway', Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align:center;
+    background: #222;
+}
+
+
+button {
+    background: #ff0000;
+    color: #ff000065;
+    text-align:center;
+    line-height:52px;
+    padding:0 35px;
+    border-radius: 0px;
+    text-transform:uppercase;
+    font-weight:600;
+    border:2px solid transparent;
+    border-radius: 10px;
+    font-weight: bold;
+}
+button:hover{
+    color:#fff;
+    border-color:#fff;
+    background:none;
+}
+button:focus {
+    color:#fff;
+    border-color:#fff;
+    background:none;
+    box-shadow:none;
+    outline:none;
+}
+
+#muteButton, #playButton, #replayButton{
+    width: 60px; /* Set the width of the button */
+    height: 60px; /* Set the height of the button */
+    background-color: rgba(255, 255, 255, 0.3); /* Background color of the button */
+    border: none; /* Remove the border */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border-radius: 50%; /* Rounded corners */
+    cursor: pointer;
+}
+#youtubeButton{
+    width: 60px; /* Set the width of the button */
+    height: 60px; /* Set the height of the button */
+    background-color: rgba(255, 255, 255, 0); /* Background color of the button */
+    border: none; /* Remove the border */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border-radius: 50%; /* Rounded corners */
+    cursor: pointer;
+}
+#muteButtonImage, #playButtonImage{
+    width: 30px;
+    height: 30px;
+}
+#replayButtonImage{
+    width: 40px;
+    height: 40px;
+}
+#youtubeButtonImage{
+    width: 70px;
+    height: 70px;
+    opacity: 0.7;
+}
+#videoBtn-container{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 20px;
+}
+#youtubeButton-container {
+    position: absolute;
+    bottom: 1.5%;
+    right: 1.5%; /* Position the button 5% from the right edge */
+    z-index: 3;
+}
+/*  ====================
+        Home 相關
+    ====================  */
+#home-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0);
+    z-index: 4;
+    font-size:20px;
+}
+
+#home-text .line1{
+    font-size: 32px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+}
+#home-text h1 {
+    display: inline;
+}
+#home-text .line2{
+    font-weight: 700;
+    font-size: 100px;
+    margin-bottom: 10px;
+    line-height: 1;
+    letter-spacing:0.02em;
+}
+
+#home-text p{
+    max-width: 800px;
+    width:100%;
+    margin:0 auto 30px;
+    color: #fff;
+    line-height: 1.7;
+}
+
+#home-text span {
+    font-size:36px;
+    display:block;
+    font-weight:300;
+    line-height:0;
+}
+
+#home-text a {
+    color: #fff;
+    font-weight: 550;
+}
+
+/*  ====================
+        container 
+    ====================  */
+
+#about-container, #education-container, #project-container{
+    position: absolute; /* 固定位置 */
+    top: 50%; /* 垂直居中 */
+    left: 50%; /* 水平居中 */
+    transform: translate(-50%, -50%); /* 精確居中 */
+    z-index: 10;
+    width: 50%; /* 調整容器的寬度 */
+    text-align: center; /* 標題和內容居中 */
+    background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
+}
+
+.divider {
+    width: 100%; /* 分隔線的寬度 */
+    height: 1px; /* 分隔線的厚度 */
+    background-color: #ffffff; /* 分隔線的顏色 */
+    margin: 0px auto 30px; /* 分隔線周圍的間距 */
+}
+
+/*  ====================
+        about-me 相關
+    ====================  */
+
+#about-container h2 {
+    font-size: 3rem; /* 標題的大小 */
+    font-weight: bold;
+    display: inline;
+}
+
+#about-content {
+    display: flex;
+    justify-content: center; /* 水平居中內容 */
+    align-items: center; /* 垂直對齊內容 */
+    text-align: left; /* 內容區域內文本左對齊 */
+    gap: 50px; /* 增加圖片和文本之間的間距 */
+}
+
+#about-photo {
+    /* max-width: 350px;  */
+    max-width: 35%;
+    height: auto; /* 讓圖片保持比例 */
+    opacity: 0.8; /* 設置圖片透明度 */
+    /* border: 3px solid #ffffff; 設置圓框的顏色和厚度 */
+    border-radius: 15%; /* 使邊框呈圓形 */
+    /* padding: 5px; 圓框和圖片之間的間距 */
+    box-sizing: border-box; /* 包括邊框和內邊距在內的總寬度和高度 */
+}
+
+#about-text {
+    font-size: 1.4rem; /* 調整文字大小 */
+    line-height: 1.6; /* 增加行間距 */
+    text-align: justify; /* 文字左右對齊 */
+}
+
+#about-text p {
+    margin-bottom: 1rem; /* 增加段落之間的間距 */
+}
+
+#about-text span, a{
+    font-weight: bold; /* 強調關鍵詞 */
+    color: #fcf979; /* 讓關鍵詞更突出 */
+}
+
+#keyword{
+    margin-left: 1%;
+    text-align: left;
+    font-size: 1.4rem;
+}
+/*  ====================
+        education 相關
+    ====================  */
+
+#education-container h2 {
+    font-size: 3rem; /* 標題的大小 */
+    font-weight: bold;
+    display: inline;
+}
+
+#education-content {
+    display: flex;
+    justify-content: flex-start; /* 水平對齊到左側 */
+    align-items: center; /* 垂直對齊內容 */
+    text-align: left; /* 內容區域內文本左對齊 */
+    z-index: 3;
+}
+
+#education-content ul {
+    list-style-type: none; /* 移除列表項目的點 */
+    padding: 0; /* 移除內邊距 */
+    margin: 0; /* 移除外邊距 */
+}
+
+#education-content li {
+    margin-bottom: 50px; /* 列表項目之間的間距 */
+}
+
+.school-info {
+    display: flex;
+    justify-content: space-between; /* 讓內容在容器內兩端對齊 */
+    align-items: flex-start; /* 垂直上對齊 */
+    width: 100%; /* 確保容器的寬度 */
+}
+
+.school-details {
+    display: flex;
+    flex-direction: column; /* 讓學校名稱、系所在地、學位垂直排列 */
+}
+
+.school-name {
+    font-size: 1.5rem; /* 學校名稱字體大小 */
+    font-weight: bold; /* 學校名稱加粗 */
+}
+
+.school-department {
+    font-size: 1.2rem; /* 學校所在地字體大小 */
+    color: #666; /* 學校所在地顏色 */
+}
+
+.school-department a{
+    font-size: 1.2rem; /* 學校所在地字體大小 */
+    color: #777; /* 學校所在地顏色 */
+}
+
+.degree {
+    font-size: 1.0rem; /* 學位字體大小 */
+    color: #888; /* 學位顏色 */
+}
+
+.dates {
+    position: absolute;
+    right: 0%;
+    font-size: 0.9rem; /* 日期字體大小 */
+    color: #444; /* 日期顏色 */
+    text-align: right; /* 右對齊日期文本 */
+    align-self: flex-end; /* 將日期推到右側 */
+}
+
+
+/*  ====================
+        project 相關
+    ====================  */
+
+
+#project-container h2 {
+    font-size: 3rem; /* 標題的大小 */
+    font-weight: bold;
+    display: inline;
+}
+
+#project-content {
+    display: flex;
+    justify-content: space-between; /* 讓項目之間的間距均勻 */
+    align-items: center; /* 垂直對齊內容 */
+    text-align: center; /* 內容區域內文本居中對齊 */
+    z-index: 3;
+    margin-top: 20px; /* 在標題和項目之間添加一些空間 */
+    gap: 25px; /* 改變項目之間的距離 */
+}
+
+.project-item {
+    flex-basis: 30%; /* 調整每個項目的基礎寬度，這樣它們會佔據容器的30%寬度 */
+    height: 450px; /* 調整格子的高度 */
+    background-color: red; /* 格子的背景顏色為紅色 */
+    border-radius: 10px; /* 圓角 */
+    display: flex;
+    align-items: center; /* 垂直居中圖片 */
+    justify-content: center; /* 水平居中圖片 */
+    overflow: hidden; /* 隱藏超出的部分 */
+}
+
+.project-item:first-child {
+    margin-left: 0; /* 移除第一個項目的左側間距 */
+}
+
+.project-item:last-child {
+    margin-right: 0; /* 移除最後一個項目的右側間距 */
+}
+
+.project-item img {
+    max-width: 100%; /* 確保圖片不會超出容器寬度 */
+    max-height: 100%; /* 確保圖片不會超出容器高度 */
+    object-fit: cover; /* 圖片覆蓋整個格子 */
+    border-radius: 5px; /* 圓角圖片 */
+}
+
+
+swiper-container {
+    width: 100%;
+    height: 500px;
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
