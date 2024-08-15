@@ -280,7 +280,11 @@ button:focus {
 #about-container h2 {
     font-size: 3rem; /* 標題的大小 */
     font-weight: bold;
-    display: inline;
+    text-align: left; /* 標題置左 */
+    margin-left: 0; /* 清除默認的左右外邊距 */
+    margin-right: auto; /* 讓右側自動填充剩餘空間 */
+    margin: 0; /* 清除所有外邊距 */
+    padding: 0; /* 清除所有內邊距 */
 }
 
 #about-content {
@@ -329,7 +333,11 @@ button:focus {
 #education-container h2 {
     font-size: 3rem; /* 標題的大小 */
     font-weight: bold;
-    display: inline;
+    text-align: left; /* 標題置左 */
+    margin-left: 0; /* 清除默認的左右外邊距 */
+    margin-right: auto; /* 讓右側自動填充剩餘空間 */
+    margin: 0; /* 清除所有外邊距 */
+    padding: 0; /* 清除所有內邊距 */
 }
 
 #education-content {
@@ -400,45 +408,86 @@ button:focus {
 #project-container h2 {
     font-size: 3rem; /* 標題的大小 */
     font-weight: bold;
-    display: inline;
-}
-
-#project-content {
-    display: flex;
-    justify-content: space-between; /* 讓項目之間的間距均勻 */
-    align-items: center; /* 垂直對齊內容 */
-    text-align: center; /* 內容區域內文本居中對齊 */
-    z-index: 3;
-    margin-top: 20px; /* 在標題和項目之間添加一些空間 */
-    gap: 25px; /* 改變項目之間的距離 */
+    text-align: left; /* 標題置左 */
+    margin-left: 0; /* 清除默認的左右外邊距 */
+    margin-right: auto; /* 讓右側自動填充剩餘空間 */
+    margin: 0; /* 清除所有外邊距 */
+    padding: 0; /* 清除所有內邊距 */
 }
 
 .project-item {
-    flex-basis: 30%; /* 調整每個項目的基礎寬度，這樣它們會佔據容器的30%寬度 */
-    height: 450px; /* 調整格子的高度 */
-    background-color: red; /* 格子的背景顏色為紅色 */
-    border-radius: 10px; /* 圓角 */
+    position: relative;
+    /* background-color: #db6b9c; */
+    width: 100%; /* 讓 project-item 寬度與 swiper-slide 一致 */
+    height: 95%; /* 設置高度為 swiper-slide 的 90% */
     display: flex;
-    align-items: center; /* 垂直居中圖片 */
-    justify-content: center; /* 水平居中圖片 */
-    overflow: hidden; /* 隱藏超出的部分 */
+    justify-content: space-between; /* 讓內容之間的間距均勻 */
+    align-items: flex-start; /* 將內容向上對齊 */
+    margin-top: 0; /* 確保內容緊貼上邊 */
 }
 
-.project-item:first-child {
-    margin-left: 0; /* 移除第一個項目的左側間距 */
+/* .project-item img{
+    display: block;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.project-content {
+    text-align: left; /* 文字左對齊 */
+    margin-left: 20px;
+    margin-top: 0px;
+    flex-grow: 1; /* 使文本區域擴展並占據剩餘空間 */
+    color: #fff; /* 白色文字 */
+    font-size: 1.5rem; /* 調整文字大小 */
+    /* background-color: #fcf979; */
 }
 
-.project-item:last-child {
-    margin-right: 0; /* 移除最後一個項目的右側間距 */
+.project-content h3 {
+    background-color: #4444442e;
+    font-size: 2rem; /* 標題的大小 */
+    font-weight: bold;
+    text-align: center; /* 標題置左 */
+    margin-left: 0; /* 清除默認的左右外邊距 */
+    margin-right: auto; /* 讓右側自動填充剩餘空間 */
+    margin: 0; /* 清除所有外邊距 */
+    padding: 0; /* 清除所有內邊距 */
 }
 
-.project-item img {
-    max-width: 100%; /* 確保圖片不會超出容器寬度 */
-    max-height: 100%; /* 確保圖片不會超出容器高度 */
-    object-fit: cover; /* 圖片覆蓋整個格子 */
-    border-radius: 5px; /* 圓角圖片 */
+.github {
+    position: absolute;
+    bottom: 0; /* 將圖標放置在底部 */
+    right: 0; /* 將圖標放置在右側 */
+}
+.github img {
+    width: 50px; /* 調整圖標大小 */
+    height: 50px; /* 調整圖標大小 */
 }
 
+.project-content a{
+    font-weight: normal; /* 強調關鍵詞 */
+    color: #fcf979; /* 讓關鍵詞更突出 */
+}
+
+.project-content ul {
+    /* list-style-type: none; 移除原始的列表樣式 */
+    /* padding-left: 0; 移除左邊距 */
+    font-size: 25px;
+}
+
+.project-content ul li {
+    margin-bottom: 10px; /* 列表項目之間的間距 */
+}
+
+.project-content ul ul {
+    padding-left: 20px; /* 為內層列表添加左邊距 */
+    /* list-style-type: disc; 為內層列表添加圓形標記 */
+}
+
+.project-content ul ul li {
+    font-size: 18px;
+    margin-bottom: 5px; /* 內層列表項目之間的間距 */
+}
 
 swiper-container {
     width: 100%;
@@ -446,17 +495,26 @@ swiper-container {
 }
 
 swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #ffffff00;
+    /* background: #ff0000ec; */
     display: flex;
+    align-items: flex-start; /* 將內容向上對齊 */
     justify-content: center;
-    align-items: center;
+    height: 100%; /* 確保 slide 佔滿容器高度 */
 }
 
-swiper-slide img {
-    display: block;
+.myImgSwiper{
+    height: 100%;
+    width: 50%;
+}
+
+.myImgSwiper swiper-slide {
+    display: flex;
+    justify-content: center; /* 图片水平居中 */
+    align-items: center; /* 图片垂直居中 */
+}
+
+.myImgSwiper swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 保持图片比例并覆盖容器 */
 }

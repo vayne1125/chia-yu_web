@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>CAIG - Chia-yu, Wang</title>
 
         <link rel="stylesheet" href="css/my.css">
@@ -27,7 +27,7 @@
             <div class = "vertical-scrolling">
                 <div id = "video-bg_color">
                     <video id="myVideo">  
-                        <source src="asset/video/chia-yu_slow_v0.1.mp4" type="video/mp4">
+                        <source src="asset/video/chia-yu.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div id="home-text">
@@ -114,20 +114,41 @@
                 <div id="project-container">
                     <h2>Project</h2>
                     <div class="divider"></div>
-                    <!-- <div id="project-content">
-                        <div class="project-item">
-                            <img src="./asset/image/bg2.jpg" alt="Project 1">
-                        </div>
-                        <div class="project-item">
-                            <img src="./asset/image/bg2.jpg" alt="Project 2">
-                        </div>
-                        <div class="project-item">
-                            <img src="./asset/image/bg2.jpg" alt="Project 3">
-                        </div>
-                    </div> -->
 
                     <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true">
-                        <swiper-slide>Slide 1</swiper-slide>
+                        <swiper-slide>
+                            <div class = "project-item">
+                                
+                                <swiper-container class="myImgSwiper" autoplay-delay="2500">
+                                    <swiper-slide><img src="./asset/image/project1_1_v1.png"></swiper-slide>
+                                    <swiper-slide><img src="./asset/image/project1_2_v1.png"></swiper-slide>
+                                    <swiper-slide><img src="./asset/image/project1_3_v1.png"></swiper-slide>
+                                    <swiper-slide><img src="./asset/image/project1_4_v1.png"></swiper-slide>
+                                </swiper-container>
+        
+                                <div class = "project-content">
+                                    <h3> Visualization </h3>
+                                    <ul>
+                                        <li> Implement Visualization Algorithms </li>
+                                            <ul>
+                                                <li> Marching Cube Method </li>
+                                                <li> Slice Method </li>
+                                                <li> Raycasting Method </li>
+                                                <li> RK2 Method(Streamline) </li>
+                                                <li> Sammon Mapping & PCA </li>
+                                                <li> SOM Method <a href = "https://youtu.be/8l7O3fyZHcQ" target="_blank">(DEMO)</a></li>
+                                            </ul>
+                                        <li> Using C++, GLSL </li>
+                                    </ul>
+                                    <div class = "github"> 
+                                        <a href = https://github.com/vayne1125/Visualization target="_blank">
+                                            <img src = "asset/image/github.png"> </img>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+
                         <swiper-slide>Slide 2</swiper-slide>
                         <swiper-slide>Slide 3</swiper-slide>
                       </swiper-container>
