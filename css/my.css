@@ -255,7 +255,7 @@ button:focus {
         container 
     ====================  */
 
-#about-container, #education-container, #project-container{
+#about-container, #education-container, #project-container, #award-container{
     position: absolute; /* 固定位置 */
     top: 50%; /* 垂直居中 */
     left: 50%; /* 水平居中 */
@@ -434,7 +434,7 @@ button:focus {
 } */
 
 .project-content {
-    text-align: left; /* 文字左對齊 */
+    text-align: justify;
     margin-left: 20px;
     margin-top: 0px;
     flex-grow: 1; /* 使文本區域擴展並占據剩餘空間 */
@@ -502,6 +502,23 @@ swiper-slide {
     height: 100%; /* 確保 slide 佔滿容器高度 */
 }
 
+#project2-img{
+    width: 30%;
+}
+
+#project3-img{
+    background-color: #ffffff;
+    width: 40%;
+}
+
+.project3-swiper-slide-img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto !important;
+    /* height: auto; */
+    object-fit: contain !important; /* 保持图片比例并覆盖容器 */
+}
+
 .myImgSwiper{
     height: 100%;
     width: 50%;
@@ -509,12 +526,31 @@ swiper-slide {
 
 .myImgSwiper swiper-slide {
     display: flex;
-    justify-content: center; /* 图片水平居中 */
-    align-items: center; /* 图片垂直居中 */
+    justify-content: center;
+    align-items: center;
 }
 
 .myImgSwiper swiper-slide img {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover; /* 保持图片比例并覆盖容器 */
+}
+
+.project-content span, a{
+    font-weight: bold; /* 強調關鍵詞 */
+    color: #fcf979; /* 讓關鍵詞更突出 */
+}
+
+/*  ====================
+        award 相關
+    ====================  */
+
+#award-container h2 {
+    font-size: 3rem; /* 標題的大小 */
+    font-weight: bold;
+    text-align: left; /* 標題置左 */
+    margin-left: 0; /* 清除默認的左右外邊距 */
+    margin-right: auto; /* 讓右側自動填充剩餘空間 */
+    margin: 0; /* 清除所有外邊距 */
+    padding: 0; /* 清除所有內邊距 */
 }
