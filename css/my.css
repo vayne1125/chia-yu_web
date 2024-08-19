@@ -255,7 +255,7 @@ button:focus {
         container 
     ====================  */
 
-#about-container, #education-container, #project-container, #award-container{
+#about-container, #education-container, #project-container, #award-container, #hobbies-container{
     position: absolute; /* 固定位置 */
     top: 50%; /* 垂直居中 */
     left: 50%; /* 水平居中 */
@@ -419,7 +419,7 @@ button:focus {
     position: relative;
     /* background-color: #db6b9c; */
     width: 100%; /* 讓 project-item 寬度與 swiper-slide 一致 */
-    height: 95%; /* 設置高度為 swiper-slide 的 90% */
+    height: 95%; /* 設置高度為 swiper-slide 的 95% */
     display: flex;
     justify-content: space-between; /* 讓內容之間的間距均勻 */
     align-items: flex-start; /* 將內容向上對齊 */
@@ -553,4 +553,98 @@ swiper-slide {
     margin-right: auto; /* 讓右側自動填充剩餘空間 */
     margin: 0; /* 清除所有外邊距 */
     padding: 0; /* 清除所有內邊距 */
+}
+
+#award-content {
+    display: flex;
+    justify-content: flex-start; /* 水平對齊到左側 */
+    align-items: center; /* 垂直對齊內容 */
+    text-align: justify; /* 內容區域內文本左對齊 */
+    z-index: 3;
+}
+
+#award-content ul {
+    list-style-type: none; /* 移除列表項目的點 */
+    padding: 0; /* 移除內邊距 */
+    margin: 0; /* 移除外邊距 */
+}
+
+#award-content li {
+    margin-bottom: 35px; /* 列表項目之間的間距 */
+}
+
+.award-info {
+    display: flex;
+    justify-content: space-between; /* 讓內容在容器內兩端對齊 */
+    align-items: flex-start; /* 垂直上對齊 */
+    width: 100%; /* 確保容器的寬度 */
+}
+
+.award-details {
+    display: flex;
+    flex-direction: column; /* 讓學校名稱、系所在地、學位垂直排列 */
+}
+
+.award-name {
+    font-size: 1.5rem; /* 學校名稱字體大小 */
+    font-weight: bold; /* 學校名稱加粗 */
+}
+
+.award-award {
+    font-size: 1.2rem; /* 學校所在地字體大小 */
+    color: #666; /* 學校所在地顏色 */
+}
+
+.award-award a{
+    font-size: 1.2rem; /* 學校所在地字體大小 */
+    color: #666; /* 學校所在地顏色 */
+}
+
+/*  ====================
+        hobbies 相關
+    ====================  */
+
+#hobbies-container h2 {
+    font-size: 3rem; /* 標題的大小 */
+    font-weight: bold;
+    text-align: left; /* 標題置左 */
+    margin-left: 0; /* 清除默認的左右外邊距 */
+    margin-right: auto; /* 讓右側自動填充剩餘空間 */
+    margin: 0; /* 清除所有外邊距 */
+    padding: 0; /* 清除所有內邊距 */
+}
+
+#hobbies-content {
+    /* background-color: #e5ff00; */
+    height: 300px;
+    display: flex;
+    justify-content: space-between; /* 水平等距分布 */
+    align-items: flex-end; /* 垂直對齊到底部 */
+    z-index: 3;
+}
+
+.hobbies-info {
+    position: relative; /* 使caption相對於這個容器定位 */
+    width: 32%; /* 控制圖片寬度 */
+    background-color: #ff0000;
+    height: 100%;
+}
+.hobbies-info :hover{
+    cursor: pointer;
+}
+.hobbies-info img {
+    width: 100%; /* 讓圖片占滿父容器寬度 */
+    height: 100%; /* 自動調整高度以保持比例 */
+    object-fit: cover;
+}
+
+.hobbies-info .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #4444447b; /* 白色透明背景 */
+    color: #ffffff; /* 文字顏色 */
+    font-size: 1.2rem; /* 字體大小 */
+    padding: 6px 0px;
 }
