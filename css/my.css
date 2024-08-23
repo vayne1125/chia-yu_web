@@ -357,6 +357,10 @@ button:focus {
     #about-container, #education-container, #project-container, #award-container, #hobbies-container{
         width: 330px; /* 調整容器的寬度 */
     }
+    
+    .divider {
+        margin: 0px auto 10px; /* 分隔線周圍的間距 */
+    }
 }
 
 /*  ====================
@@ -757,6 +761,7 @@ swiper-slide {
     swiper-container {
         height: 450px;
     }
+    
 }
 
 .project-content a{
@@ -820,7 +825,7 @@ swiper-slide {
 @media(max-width: 460px) {
     .project-content ul {
         font-size: 15px;
-        margin-top: 5px;
+        margin-top: 3px;
     }
     
     .project-content ul li {
@@ -1037,7 +1042,7 @@ swiper-slide {
 
 @media(max-width: 460px) {
     .award-name {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
     
     .award-award {
