@@ -16,7 +16,7 @@ header {
 #menu {
     position: absolute; /* 絕對定位 */
     top: 0; /* 距離頁面頂部 0 像素 */
-    right: 3%; /* 距離頁面右側 0 像素 */
+    right: 60px; /* 距離頁面右側 0 像素 */
     display: flex; /* 使用 Flexbox 布局 */
     justify-content: flex-end; /* 將項目對齊到容器的右側 */
     background-color: #ffffff00; /* 背景顏色透明 */
@@ -48,7 +48,17 @@ li.active a {
     margin-left: 1%;
 }
 
+@media (max-width: 1000px) {
+}
 
+@media(max-width: 768px) {
+}
+
+@media(max-width: 540px) {
+}
+
+@media(max-width: 460px) {
+}
 /*  ====================
          背景相關  
         1. video
@@ -235,18 +245,55 @@ button:focus {
     line-height: 1.7;
 }
 
-#home-text span {
-    font-size:36px;
-    display:block;
-    font-weight:300;
-    line-height:0;
-}
-
 #home-text a {
     color: #fff;
     font-weight: 550;
 }
 
+@media (max-width: 1000px) {
+    #home-text {
+        font-size:18px;
+    }
+    #home-text .line1{
+        font-size: 30px;
+    }
+    #home-text .line2{
+        font-size: 90px;
+    }
+    #home-text p{
+        max-width: 700px;
+    }
+}
+
+@media(max-width: 768px) {
+    #home-text {
+        font-size:13px;
+    }
+    #home-text .line1{
+        font-size: 24px;
+    }
+    #home-text .line2{
+        font-size: 65px;
+    }
+    #home-text p{
+        max-width: 500px;
+    }
+}
+
+@media(max-width: 540px) {
+    #home-text {
+        font-size:12px;
+    }
+    #home-text .line1{
+        font-size: 24px;
+    }
+    #home-text .line2{
+        font-size: 60px;
+    }
+    #home-text p{
+        max-width: 450px;
+    }
+}
 /*  ====================
         container 
     ====================  */
@@ -271,27 +318,13 @@ button:focus {
 
 @media (max-width: 1000px) {
     #about-container, #education-container, #project-container, #award-container, #hobbies-container{
-        position: absolute; /* 固定位置 */
-        top: 50%; /* 垂直居中 */
-        left: 50%; /* 水平居中 */
-        transform: translate(-50%, -50%); /* 精確居中 */
-        z-index: 10;
         width: 700px; /* 調整容器的寬度 */
-        text-align: center; /* 標題和內容居中 */
-        background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
     }
 }
 
 @media(max-width: 768px) {
     #about-container, #education-container, #project-container, #award-container, #hobbies-container{
-        position: absolute; /* 固定位置 */
-        top: 50%; /* 垂直居中 */
-        left: 50%; /* 水平居中 */
-        transform: translate(-50%, -50%); /* 精確居中 */
-        z-index: 10;
         width: 500px; /* 調整容器的寬度 */
-        text-align: center; /* 標題和內容居中 */
-        background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
     }
     
     .divider {
@@ -301,14 +334,14 @@ button:focus {
 
 @media(max-width: 540px) {
     #about-container, #education-container, #project-container, #award-container, #hobbies-container{
-        position: absolute; /* 固定位置 */
-        top: 50%; /* 垂直居中 */
-        left: 50%; /* 水平居中 */
-        transform: translate(-50%, -50%); /* 精確居中 */
-        z-index: 10;
         width: 450px; /* 調整容器的寬度 */
-        text-align: center; /* 標題和內容居中 */
-        background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
+        /* width: 300px; */
+    }
+}
+
+@media(max-width: 460px) {
+    #about-container, #education-container, #project-container, #award-container, #hobbies-container{
+        width: 300px; /* 調整容器的寬度 */
     }
 }
 
@@ -386,6 +419,25 @@ button:focus {
     }
     #about-photo {
         max-width: 50%;
+        height: auto; /* 讓圖片保持比例 */
+    }
+}
+/* 460 */
+@media(max-width: 460px) {
+    #about-container h2 {
+        font-size: 30px; /* 標題的大小 */
+    }
+
+    #about-text {
+        font-size: 0.6rem; /* 調整文字大小 */
+        text-align: justify; /* 文字左右對齊 */
+    }
+    #about-content {
+        flex-direction: column; /* 使內容垂直排列 */
+        gap: 0px;
+    }
+    #about-photo {
+        max-width: 40%;
         height: auto; /* 讓圖片保持比例 */
     }
 }
