@@ -1,6 +1,18 @@
 /*  ====================
          topbar 相關  
     ====================  */
+header {
+    position: absolute;
+    top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    z-index: 1000;
+}
+
 #menu {
     position: absolute; /* 絕對定位 */
     top: 0; /* 距離頁面頂部 0 像素 */
@@ -36,21 +48,6 @@ li.active a {
     margin-left: 1%;
 }
 
-#top-bar {
-    position: absolute;
-    top: 1%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: transparent;
-    z-index: 1000;
-
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-}
 
 /*  ====================
          背景相關  
@@ -211,7 +208,6 @@ button:focus {
     z-index: 4;
     font-size:20px;
 }
-
 #home-text .line1{
     font-size: 32px;
     display: block;
@@ -261,7 +257,7 @@ button:focus {
     left: 50%; /* 水平居中 */
     transform: translate(-50%, -50%); /* 精確居中 */
     z-index: 10;
-    width: 50%; /* 調整容器的寬度 */
+    width: 960px; /* 調整容器的寬度 */
     text-align: center; /* 標題和內容居中 */
     background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
 }
@@ -273,12 +269,55 @@ button:focus {
     margin: 0px auto 30px; /* 分隔線周圍的間距 */
 }
 
+@media (max-width: 1000px) {
+    #about-container, #education-container, #project-container, #award-container, #hobbies-container{
+        position: absolute; /* 固定位置 */
+        top: 50%; /* 垂直居中 */
+        left: 50%; /* 水平居中 */
+        transform: translate(-50%, -50%); /* 精確居中 */
+        z-index: 10;
+        width: 700px; /* 調整容器的寬度 */
+        text-align: center; /* 標題和內容居中 */
+        background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
+    }
+}
+
+@media(max-width: 768px) {
+    #about-container, #education-container, #project-container, #award-container, #hobbies-container{
+        position: absolute; /* 固定位置 */
+        top: 50%; /* 垂直居中 */
+        left: 50%; /* 水平居中 */
+        transform: translate(-50%, -50%); /* 精確居中 */
+        z-index: 10;
+        width: 500px; /* 調整容器的寬度 */
+        text-align: center; /* 標題和內容居中 */
+        background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
+    }
+    
+    .divider {
+            margin: 0px auto 15px; /* 分隔線周圍的間距 */
+    }
+}
+
+@media(max-width: 540px) {
+    #about-container, #education-container, #project-container, #award-container, #hobbies-container{
+        position: absolute; /* 固定位置 */
+        top: 50%; /* 垂直居中 */
+        left: 50%; /* 水平居中 */
+        transform: translate(-50%, -50%); /* 精確居中 */
+        z-index: 10;
+        width: 450px; /* 調整容器的寬度 */
+        text-align: center; /* 標題和內容居中 */
+        background: rgba(255, 255, 255, 0); /* 避免內容透明度影響可讀性 */
+    }
+}
+
 /*  ====================
         about-me 相關
     ====================  */
 
 #about-container h2 {
-    font-size: 3rem; /* 標題的大小 */
+    font-size: 48px; /* 標題的大小 */
     font-weight: bold;
     text-align: left; /* 標題置左 */
     margin-left: 0; /* 清除默認的左右外邊距 */
@@ -296,7 +335,6 @@ button:focus {
 }
 
 #about-photo {
-    /* max-width: 350px;  */
     max-width: 35%;
     height: auto; /* 讓圖片保持比例 */
     opacity: 0.8; /* 設置圖片透明度 */
@@ -321,11 +359,37 @@ button:focus {
     color: #fcf979; /* 讓關鍵詞更突出 */
 }
 
-#keyword{
-    margin-left: 1%;
-    text-align: left;
-    font-size: 1.4rem;
+@media (max-width: 1000px) {
+    #about-container h2 {
+        font-size: 40px; /* 標題的大小 */
+    }
+
+    #about-text {
+        font-size: 1rem; /* 調整文字大小 */
+        line-height: 1.6; /* 增加行間距 */
+        text-align: justify; /* 文字左右對齊 */
+    }
 }
+
+@media(max-width: 768px) {
+    #about-container h2 {
+        font-size: 35px; /* 標題的大小 */
+    }
+
+    #about-text {
+        font-size: 0.8rem; /* 調整文字大小 */
+        text-align: justify; /* 文字左右對齊 */
+    }
+    #about-content {
+        flex-direction: column; /* 使內容垂直排列 */
+        gap: 0px;
+    }
+    #about-photo {
+        max-width: 50%;
+        height: auto; /* 讓圖片保持比例 */
+    }
+}
+
 /*  ====================
         education 相關
     ====================  */
@@ -346,6 +410,18 @@ button:focus {
     align-items: center; /* 垂直對齊內容 */
     text-align: left; /* 內容區域內文本左對齊 */
     z-index: 3;
+}
+
+@media (max-width: 1000px) {
+    #education-container h2 {
+        font-size: 40px; /* 標題的大小 */
+    }
+}
+
+@media(max-width: 768px) {
+    #education-container h2 {
+        font-size: 35px; /* 標題的大小 */
+    }
 }
 
 #education-content ul {
@@ -399,6 +475,71 @@ button:focus {
     align-self: flex-end; /* 將日期推到右側 */
 }
 
+@media (max-width: 1000px) {
+    .school-name {
+        font-size: 1.3rem; /* 學校名稱字體大小 */
+    }
+    
+    .school-department {
+        font-size: 1rem; /* 學校所在地字體大小 */
+    }
+    
+    .school-department a{
+        font-size: 1rem; /* 學校所在地字體大小 */
+    }
+    
+    .degree {
+        font-size: 0.8rem; /* 學位字體大小 */
+    }
+    
+    .dates {
+        font-size: 0.7rem; /* 日期字體大小 */
+    }
+}
+
+@media(max-width: 768px) {
+    .school-name {
+        font-size: 1.2rem; /* 學校名稱字體大小 */
+    }
+    
+    .school-department {
+        font-size: 0.9rem; /* 學校所在地字體大小 */
+    }
+    
+    .school-department a{
+        font-size: 0.9rem; /* 學校所在地字體大小 */
+    }
+    
+    .degree {
+        font-size: 0.7rem; /* 學位字體大小 */
+    }
+    
+    .dates {
+        font-size: 0.6rem; /* 日期字體大小 */
+    }
+}
+
+@media(max-width: 540px) {
+    .school-name {
+        font-size: 1.1rem; /* 學校名稱字體大小 */
+    }
+    
+    .school-department {
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
+    
+    .school-department a{
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
+    
+    .degree {
+        font-size: 0.6rem; /* 學位字體大小 */
+    }
+    
+    .dates {
+        font-size: 0.6rem; /* 日期字體大小 */
+    }
+}
 
 /*  ====================
         project 相關
@@ -426,15 +567,9 @@ button:focus {
     margin-top: 0; /* 確保內容緊貼上邊 */
 }
 
-/* .project-item img{
-    display: block;
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-} */
-
 .project-content {
     text-align: justify;
+    width: 100%;
     margin-left: 20px;
     margin-top: 0px;
     flex-grow: 1; /* 使文本區域擴展並占據剩餘空間 */
@@ -452,6 +587,39 @@ button:focus {
     margin-right: auto; /* 讓右側自動填充剩餘空間 */
     margin: 0; /* 清除所有外邊距 */
     padding: 0; /* 清除所有內邊距 */
+}
+
+@media (max-width: 1000px) {
+    #project-container h2 {
+        font-size: 40px; /* 標題的大小 */
+    }
+
+    .project-content {
+        margin-left: 10px;
+    }
+
+    .project-content h3{
+        font-size: 24px;
+    }
+}
+
+@media(max-width: 768px) {
+
+    #project-container h2 {
+        font-size: 35px; /* 標題的大小 */
+    }
+    .project-item {
+        flex-direction: column;
+    }
+
+    .project-content {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .project-content h3{
+        font-size: 19px;
+    }
 }
 
 .github {
@@ -472,11 +640,12 @@ button:focus {
 .project-content ul {
     /* list-style-type: none; 移除原始的列表樣式 */
     /* padding-left: 0; 移除左邊距 */
+    margin-top: 15px;
     font-size: 25px;
 }
 
 .project-content ul li {
-    margin-bottom: 10px; /* 列表項目之間的間距 */
+    margin-bottom: 8px; /* 列表項目之間的間距 */
 }
 
 .project-content ul ul {
@@ -486,7 +655,53 @@ button:focus {
 
 .project-content ul ul li {
     font-size: 18px;
+    margin-top: 0px;
     margin-bottom: 5px; /* 內層列表項目之間的間距 */
+}
+
+@media (max-width: 1000px) {
+    .project-content ul {
+        font-size: 18px;
+    }
+    
+    .project-content ul li {
+        margin-bottom: 4px; 
+    }
+    
+    .project-content ul ul li {
+        font-size: 14px;
+        margin-bottom: 3px; /* 內層列表項目之間的間距 */
+    }
+}
+
+@media(max-width: 768px) {
+    .project-content ul {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    
+    .project-content ul li {
+        margin-bottom: 4px; 
+    }
+    
+    .project-content ul ul li {
+        font-size: 14px;
+        margin-bottom: 3px; /* 內層列表項目之間的間距 */
+    }
+}
+
+@media(max-width: 540px) {
+    .award-name {
+        font-size: 0.95rem; /* 學校名稱字體大小 */
+    }
+    
+    .award-award {
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
+    
+    .award-award a{
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
 }
 
 swiper-container {
@@ -554,7 +769,17 @@ swiper-slide {
     margin: 0; /* 清除所有外邊距 */
     padding: 0; /* 清除所有內邊距 */
 }
+@media (max-width: 1000px) {
+    #award-container h2 {
+        font-size: 40px; /* 標題的大小 */
+    }
+}
 
+@media(max-width: 768px) {
+    #award-container h2 {
+        font-size: 35px; /* 標題的大小 */
+    }
+}
 #award-content {
     display: flex;
     justify-content: flex-start; /* 水平對齊到左側 */
@@ -600,6 +825,47 @@ swiper-slide {
     color: #666; /* 學校所在地顏色 */
 }
 
+@media (max-width: 1000px) {
+    .award-name {
+        font-size: 1.3rem; /* 學校名稱字體大小 */
+    }
+    
+    .award-award {
+        font-size: 1rem; /* 學校所在地字體大小 */
+    }
+    
+    .award-award a{
+        font-size: 1rem; /* 學校所在地字體大小 */
+    }
+}
+
+@media(max-width: 768px) {
+    .award-name {
+        font-size: 1.1rem; /* 學校名稱字體大小 */
+    }
+    
+    .award-award {
+        font-size: 0.9rem; /* 學校所在地字體大小 */
+    }
+    
+    .award-award a{
+        font-size: 0.9rem; /* 學校所在地字體大小 */
+    }
+}
+
+@media(max-width: 540px) {
+    .award-name {
+        font-size: 0.95rem; /* 學校名稱字體大小 */
+    }
+    
+    .award-award {
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
+    
+    .award-award a{
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
+}
 /*  ====================
         hobbies 相關
     ====================  */
@@ -612,6 +878,18 @@ swiper-slide {
     margin-right: auto; /* 讓右側自動填充剩餘空間 */
     margin: 0; /* 清除所有外邊距 */
     padding: 0; /* 清除所有內邊距 */
+}
+
+@media (max-width: 1000px) {
+    #hobbies-container h2 {
+        font-size: 40px; /* 標題的大小 */
+    }
+}
+
+@media(max-width: 768px) {
+    #hobbies-container h2 {
+        font-size: 35px; /* 標題的大小 */
+    }
 }
 
 #hobbies-content {
@@ -629,9 +907,11 @@ swiper-slide {
     background-color: #ff0000;
     height: 100%;
 }
+
 .hobbies-info :hover{
     cursor: pointer;
 }
+
 .hobbies-info img {
     width: 100%; /* 讓圖片占滿父容器寬度 */
     height: 100%; /* 自動調整高度以保持比例 */
@@ -647,4 +927,37 @@ swiper-slide {
     color: #ffffff; /* 文字顏色 */
     font-size: 1.2rem; /* 字體大小 */
     padding: 6px 0px;
+}
+
+
+@media(max-width: 768px) {
+    #hobbies-content {
+        height: 500px;
+        flex-direction: column; /* 使內容垂直排列 */
+        display: flex;
+        justify-content: center; /* 水平居中內容 */
+        align-items: center; /* 垂直對齊內容 */
+        gap: 10px; /* 增加圖片和文本之間的間距 */
+    }
+
+    .hobbies-info {
+        position: relative; /* 使caption相對於這個容器定位 */
+        width: 50%; /* 控制圖片寬度 */
+        background-color: #ff0000;
+        height: 32%;
+    }
+}
+
+@media(max-width: 540px) {
+    .award-name {
+        font-size: 0.95rem; /* 學校名稱字體大小 */
+    }
+    
+    .award-award {
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
+    
+    .award-award a{
+        font-size: 0.8rem; /* 學校所在地字體大小 */
+    }
 }

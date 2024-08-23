@@ -9,9 +9,6 @@ https://templatemo.com/tm-528-elegance
 .navbar {
   padding: 0;
 }
-.navbar-toggle {
-  display:none;
-}
 .navbar-nav {
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
