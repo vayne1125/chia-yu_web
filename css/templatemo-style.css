@@ -6,16 +6,13 @@ https://templatemo.com/tm-528-elegance
 
 */
 
-.navbar {
-  padding: 0;
-}
 .navbar-nav {
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
   flex-direction: row;
 }
 .navbar-nav li {
-  margin-left: 30px;
+  margin-left: 30px; /*menu 選項間的距離*/
 }
 .navbar-nav li a {
   color:#fff;
@@ -40,12 +37,16 @@ https://templatemo.com/tm-528-elegance
   -webkit-transform:scale(1);
   transform:scale(1);
 }
-.navbar-nav li a:hover {
-  opacity: 1;
-}
-.navbar-nav li.active a {
-  opacity: 1;
-}
-.collapse:not(.show) {
-  display:block;
+
+/* myEdit */
+@media(max-width: 768px){
+  .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-nav li {
+    margin: 0px;
+  }
+  .navbar-nav li a:after {
+    display:none;
+  }
 }

@@ -1,22 +1,39 @@
+/* @media (max-width: 1000px) {
+}
+
+@media(max-width: 768px) {
+}
+
+@media(max-width: 540px) {
+}
+
+@media(max-width: 460px) {
+
+} */
+
 /*  ====================
          topbar 相關  
     ====================  */
 header {
     position: absolute;
-    top: 1%;
+    top: 15px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0;
     background-color: transparent;
-    z-index: 1000;
+    z-index: 990;
 }
 
+/* position: absolute; 
+    top: 13px; 
+    right: 20px;  */
+
 #menu {
-    position: absolute; /* 絕對定位 */
-    top: 0; /* 距離頁面頂部 0 像素 */
-    right: 60px; /* 距離頁面右側 0 像素 */
+    position: relative;
+    right: 20px;
+    top: 9px; 
     display: flex; /* 使用 Flexbox 布局 */
     justify-content: flex-end; /* 將項目對齊到容器的右側 */
     background-color: #ffffff00; /* 背景顏色透明 */
@@ -25,9 +42,10 @@ header {
     margin: 0; /* 去掉外邊距 */
     padding: 0; /* 去掉內邊距 */
 }
+
 #menu li {
     text-align: center;
-    padding: 20px 3px;
+    padding: 0;
     font-weight: bold;
 }
 #menu li a {
@@ -41,23 +59,103 @@ li.active a {
 }
 
 #logo {
-    color: white;
+    color: #ffffff;
+    position: relative;
+    background-color: rgba(255, 0, 0, 0);
     text-decoration: none;
     font-size: 32px;
     font-weight: bold;
-    margin-left: 1%;
+    margin-left: 20px;
 }
 
-@media (max-width: 1000px) {
+@media(max-width: 845px) {
+    #menu {
+        top: 10px;
+    }
+
+    #menu li a {
+        font-size:0.8rem;
+    }
 }
 
 @media(max-width: 768px) {
+    header {
+        background-color: rgba(255, 255, 255, 0.77);
+        top: 0px;
+        padding: 0px 0px;
+        display: flex;
+        flex-direction: column; /* 使標誌和選單垂直排列 */
+        align-items: center; /* 使標誌和選單水平居中 */
+    }
+
+    #menu {
+        right: auto; /* 取消 right 的影響 */
+        top: auto; /* 取消 top 的影響 */
+
+        display: none; /* 確保使用 Flexbox */
+        flex-direction: column; /* 垂直排列項目 */
+        
+        justify-content: center;
+        background-color: #ffffff; /* 背景顏色透明 */
+        margin: 0; /* 去掉外邊距 */
+        padding: 0; /* 去掉內邊距 */
+        width: 100%;
+    }
+
+    #logo {
+        /* width: 100%; */
+        margin-left: 0px;
+        left: 10px;
+        color: rgb(73, 73, 73);
+        background-color: #f4ecc200;
+    }
+
+    #logo-container{
+        padding: 10px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #830c4000;
+    }
+
+    #menu li a {
+        color: #a3a3a3;
+        padding: 5px;
+    }
+    
+    li.active a {
+        color: rgb(35, 35, 35) !important;
+        background-color: #fdd1e4;
+    }
+
+    #menu li a:hover {
+        background-color: #feedf4;
+
+    }
 }
 
-@media(max-width: 540px) {
+#hamburger {
+    display: none;
 }
 
-@media(max-width: 460px) {
+@media(max-width: 768px) {
+    #hamburger {
+        position: relative; 
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        background-color: rgba(251, 255, 0, 0);
+        padding: 0;
+        right: 10px;
+        outline: none; /* 移除點擊後的外框 */
+        border: none; /* 確保沒有邊框 */
+    }
+    
+    #hamburger img{
+        height: 32px;
+        width: auto;
+    }
 }
 /*  ====================
          背景相關  

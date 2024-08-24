@@ -64,3 +64,7 @@ document.getElementById('replayButton').addEventListener('click', function() {
 document.getElementById('youtubeButton').addEventListener('click', function() {
     window.open('https://www.youtube.com/watch?v=dnkaZNy1QLw', '_blank'); // Replace with the actual YouTube URL
 });
+
+$('#hamburger').on('click', function() {
+    $('#menu').toggle(); // 切换菜单的显示和隐藏
+});
