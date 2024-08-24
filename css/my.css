@@ -80,7 +80,7 @@ li.active a {
 
 @media(max-width: 768px) {
     header {
-        background-color: rgba(255, 255, 255, 0.77);
+        background-color: #4444443c;
         top: 0px;
         padding: 0px 0px;
         display: flex;
@@ -96,7 +96,7 @@ li.active a {
         flex-direction: column; /* 垂直排列項目 */
         
         justify-content: center;
-        background-color: #ffffff; /* 背景顏色透明 */
+        background-color: #44444420; /* 背景顏色透明 */
         margin: 0; /* 去掉外邊距 */
         padding: 0; /* 去掉內邊距 */
         width: 100%;
@@ -106,7 +106,7 @@ li.active a {
         /* width: 100%; */
         margin-left: 0px;
         left: 10px;
-        color: rgb(73, 73, 73);
+        /* color: rgb(73, 73, 73); */
         background-color: #f4ecc200;
     }
 
