@@ -5,7 +5,8 @@ $(document).ready(function () {
         verticalCentered: true,                 // 是否垂直置中
         menu: '#menu',
         anchors:['slide01', 'slide02', 'slide03','slide04', 'slide05', 'slide06'],
-        credits: 	{enabled: false, label: ' ', position: 'right'},
+        // credits: 	{enabled: false, label: ' ', position: 'right'},
+        // credits: 	{enabled: false},
         afterLoad: function (origin, destination, direction) {
             
         }
