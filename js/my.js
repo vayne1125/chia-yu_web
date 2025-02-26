@@ -40,7 +40,7 @@ document.getElementById('myVideo').addEventListener('pause', function () {
     playButtonImage.src = 'asset/image/play.png';
     playButtonImage.alt = 'Play';
 
-    colorLayer = document.getElementById('video-bg_color');
+    var colorLayer = document.getElementById('video-bg_color');
     colorLayer.classList.remove('high-opacity');
     $("#home-text").show();
 });
@@ -50,9 +50,27 @@ document.getElementById('myVideo').addEventListener('play', function() {
     playButtonImage.src = 'asset/image/stop.png';
     playButtonImage.alt = 'Stop';
 
-    colorLayer = document.getElementById('video-bg_color');
+    
+    var colorLayer = document.getElementById('video-bg_color');
     colorLayer.classList.add('high-opacity');
     $("#home-text").hide();
+
+    var video = document.getElementById('myVideo');
+    var endImage = document.getElementById('endImage');
+    video.style.display = 'block';
+    endImage.style.display = 'none';
+});
+
+document.getElementById('myVideo').addEventListener('ended', function () {
+    var video = document.getElementById('myVideo');
+    var endImage = document.getElementById('endImage');
+
+    // 隱藏影片，顯示圖片
+    video.style.display = 'none';
+    endImage.style.display = 'block';
+
+    var colorLayer = document.getElementById('video-bg_color');
+    colorLayer.classList.remove('high-opacity');
 });
 
 document.getElementById('replayButton').addEventListener('click', function() {
@@ -67,5 +85,5 @@ document.getElementById('youtubeButton').addEventListener('click', function() {
 });
 
 $('#hamburger').on('click', function() {
-    $('#menu').toggle(); // 切换菜单的显示和隐藏
+    $('#menu').toggle(); 
 });
